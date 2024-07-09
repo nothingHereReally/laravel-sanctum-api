@@ -16,11 +16,11 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::delete('comments/{comment}', [CommentController::class, 'destroy']);
 });
 
-Route::get('/blah', function(){
-    return response()->json([
-        'aa' => 'aa 11',
-        'bb' => 'aa 22 22',
-        'cc' => 'aa 33 33 33',
-    ], 202);
-});
+// Route::get('/blah', function(){
+//     return response()->json([
+//         'aa' => 'aa 11',
+//         'bb' => 'aa 22 22',
+//         'cc' => 'aa 33 33 33',
+//     ], 202);
+// });
 
