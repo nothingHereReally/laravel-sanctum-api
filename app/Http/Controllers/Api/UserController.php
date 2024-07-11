@@ -52,8 +52,8 @@ class UserController extends Controller
             'email' => $user->email
         ], 201);
     }
-    public function logout($id){
-        $user = User::findOrFail($id);
+    public function logout(){
+        $user = User::findOrFail(auth()->id());
         $user->tokens()->delete();
 
         return response()->json([
