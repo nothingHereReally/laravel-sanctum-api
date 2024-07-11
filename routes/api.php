@@ -10,13 +10,19 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
+/*
+ * TODO:
+ * comment CRUD
+ * delete post
+ *
+ */
 Route::middleware('auth:sanctum')->group(function(){
     Route::apiResource('posts', PostController::class);
     Route::post('comments', [CommentController::class, 'store']);
     Route::put('comments/{comment}', [CommentController::class, 'update']);
     Route::delete('comments/{comment}', [CommentController::class, 'destroy']);
 
-    Route::delete('user/logout/{id}', [UserController::class, 'logout']);
+    Route::post('user/logout', [UserController::class, 'logout']);
 });
 
 Route::group(['prefix' => 'user'], function(){
